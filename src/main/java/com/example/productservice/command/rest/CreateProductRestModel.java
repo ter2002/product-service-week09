@@ -1,4 +1,4 @@
-package com.example.productservice.rest;
+package com.example.productservice.command.rest;
 
 import lombok.Data;
 

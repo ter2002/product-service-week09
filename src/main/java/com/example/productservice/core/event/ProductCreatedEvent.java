@@ -1,4 +1,4 @@
-package com.example.productservice.event;
+package com.example.productservice.core.event;
 
 import lombok.Data;
 
@@ -6,8 +6,9 @@ import java.math.BigDecimal;
 
 @Data
 public class ProductCreatedEvent {
-    private String productID;
+    private String productId;
     private String title;
     private BigDecimal price;
     private Integer quantity;
+
 }

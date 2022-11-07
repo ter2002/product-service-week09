@@ -1,4 +1,4 @@
-package com.example.productservice.rest;
+package com.example.productservice.command.rest;
 
 import com.example.productservice.command.CreateProductCommand;
 import org.axonframework.commandhandling.gateway.CommandGateway;
@@ -9,17 +9,17 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/products")
-public class ProductController {
+public class ProductCommandController {
     private final CommandGateway commandGateway;
 
     @Autowired
-    public ProductController(CommandGateway commandGateway){
+    public ProductCommandController(CommandGateway commandGateway){
         this.commandGateway = commandGateway;
     }
     @PostMapping
     public String createProduct(@RequestBody CreateProductRestModel model){
         CreateProductCommand command = CreateProductCommand.builder()
-                .productID(UUID.randomUUID().toString())
+                .productId(UUID.randomUUID().toString())
                 .title(model.getTitle())
                 .price(model.getPrice())
                 .quantity(model.getQuantity())
